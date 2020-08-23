@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="header" id="header">
         <span>MovieLibrary</span>
     </header>
-    <div id="containerPicture" class="containerPicture">
-        <div class="box">
-            <img src="img/Beauty-and-the-beast.jpg" alt="Beauty-and-the-beast">
-            <span>Beauty and the beast</span>
+    <section class="headerSection">
+        <div id="containerPicture" class="containerPicture">
+            <div class="box">
+                <img src="img/Beauty-and-the-beast.jpg" alt="Beauty-and-the-beast">
+                <span>Beauty and the beast</span>
+            </div>
+            <div class="box">
+                <img src="img/Breakfast-at-Tiffanys.jpg" alt="Breakfast-at-Tiffanys">
+                <span>Breakfast at Tiffanys</span>
+            </div>
+            <div class="box">
+                <img src="img/psycho-shower-e1550766740435.jpg" alt="Psyho">
+                <span>Psyho</span>
+            </div>
+            <div class="box">
+                <img src="img/Silence-of-the-Lambs.jpg" alt="Silence-of-the-Lambs">
+                <span>Silence of the Lambs</span>
+            </div>
         </div>
-        <div class="box">
-            <img src="img/Breakfast-at-Tiffanys.jpg" alt="Breakfast-at-Tiffanys">
-            <span>Breakfast at Tiffanys</span>
+    </section>
+    <section class="quotesSection">
+        <div class="quotes">
+            <p>“Carpe diem. Seize the day, boys. Make your lives extraordinary.”</p>
+            <span>Dead Poets Society, 1989</span>
         </div>
-        <div class="box">
-            <img src="img/psycho-shower-e1550766740435.jpg" alt="Psyho">
-            <span>Psyho</span>
+    </section>
+    <section class="movieSection">
+        <div class="someText">
+            <p>Looking for something to watch next? Find out what's popular, read staff recommendations, and discover
+                hidden
+                gems from undiscovered classics to the newest movies!</p>
         </div>
-        <div class="box">
-            <img src="img/Silence-of-the-Lambs.jpg" alt="Silence-of-the-Lambs">
-            <span>Silence of the Lambs</span>
+        <div class="searchMovie">
+            <input type="text" id="search" class="search" placeholder="type movie...">
+            <button class="button" id="button">Search movie</button>
         </div>
-    </div>
-    <div class="quotes">
-        <p>“Carpe diem. Seize the day, boys. Make your lives extraordinary.”</p>
-        <span>Dead Poets Society, 1989</span>
-    </div>
-    <div class="someText">
-        <p>Looking for something to watch next? Find out what's popular, read staff recommendations, and discover hidden gems from undiscovered classics to the newest movies!</p>
-    </div>
-    <div class="searchMovie">
-        <input type="text" id="search" class="search" placeholder="type movie...">
-        <button class="button" id="button">Search movie</button>    
-    </div>
-    
-    <main>
-        <div class="container" id="container">
-            <!-- <div class="movie" id="movie">
-                <div class="poster" id="poster"><img src="" alt=""></div>
-                <div>
-                    <h1 id="title" class="title"></h1>
-                    <span id="year" class="year"></span>
-                    <span id="type" class="type"></span>
-                </div>
-            </div> -->
-        </div>
-    </main>
+        <div class="container" id="container"></div>
+    </section>
+
+
     <script src="js/script.js"></script>
 </body>
+
 </html>
