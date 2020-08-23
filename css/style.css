@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Do Hyeon', sans-serif;
+
+}
+
+body {
+    font-family: 'Do Hyeon', sans-serif;
+    background-color: #f1f2f6;
+
+}
+
+header {
+    height: 40px;
+    background-color: #57606f;
+    opacity: 0.7;
+    /* box-shadow: 2px 3px 3px rgb(240, 239, 239); */
+    margin-bottom: 20px;
+}
+
+header span {
+    line-height: 40px;
+    font-size: 22px;
+    position: absolute;
+    left: 20px;
+}
+
+
+.containerPicture {
+    display: flex;
+    width: 100%;
+    padding: 4% 2%;
+    max-height: 100vh;
+    height: 90vh;
+}
+
+.box {
+    flex: 1;
+    overflow: hidden;
+    transition: 1.5s;
+    margin: 0 2%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    line-height: 0;
+    position: relative;
+}
+
+.box img {
+    height: 100%;
+    /* width: 400%; */
+    object-fit: cover;
+    transition: 1.5s;
+}
+
+.box span {
+    font-size: 3.8vh;
+    display: block;
+    text-align: center;
+    height: 10vh;
+    line-height: 2.6;
+    color: #fff;
+}
+
+.box:hover { 
+    flex: 1 1 50%;
+}
+.box:hover img {
+    width: 100%;
+    height: 100%;
+}
+.box:hover span {
+    position: absolute;
+    bottom: 10px;
+    left: 30%;
+    font-size: 40px;
+    opacity: 0.6;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+ .quotes {
+     width: 60%;
+     margin: 100px auto; 
+     background-color: #57606f;
+     padding: 20px 80px;   
+     text-align: center;
+     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    
+ }
+ .quotes p {
+     font-size: 30px;
+     color: #fff;
+     line-height: 40px;
+     text-shadow: #2a8d7b -1px -1px;
+
+ }
+
+ .quotes span {
+    color: #217969;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: #53b4a2 1px 1px;
+
+ }
+.someText {
+    width: 80%;
+    margin: 40px auto;
+    font-size: 25px;
+}
+ .noResult {
+    font-size: 30px;
+    color: #57606f;
+    line-height: 40px;
+    text-shadow: #2a8d7b -1px -1px;
+ }
+
+.searchMovie {
+    width: 80%;
+    margin: 0 auto; 
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    border: 1px rgb(134, 132, 132);
+    border-radius: 0.2rem;
+    font-size: 20px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    text-indent: 20px;
+}
+
+button {
+    line-height: 50px;
+	height: 50px;
+	/* text-align: center; */
+	width: 250px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.5s;
+    font-size: 25px;
+    background-color: #f1f2f6;
+    border-radius: 0.2rem;
+    background-color: #fff;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    outline: none;
+    transition: transform 3s;
+}
+
+button:active {
+    transform: translateY(4px);
+}
+
+/* movies */
+
+.container {
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .movie {
+    margin-left: 2%;
+    width: 25%;
+    /* border:  2px solid red; */
+    height: 600px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 2%;
+}
+
+
+.container .movie .poster {
+    width: 100%;
+    height: 80%;
+}
+
+.container .movie .poster img {
+    width: 100%;
+    border-top-right-radius: 2%;
+    border-top-left-radius: 2%;
+    height: 100%;
+}
+
+  
+.movieText {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 10px; 
+}
+
+.movieText .h1 {
+    display: block;
+}
+
+/* imdb icon */
+
+.movieText a {
+    cursor: pointer;
+    color: #57606f;
+    display: flex;
+    
+}
+.movieText a:hover {
+    opacity: 0.8;
+}
+.fab {
+    font-size: 40px;
+}
