@@ -14,7 +14,7 @@ body {
 header {
     height: 80px;
     background-color: #57606f;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 header span {
@@ -24,10 +24,90 @@ header span {
     left: 20px;
     color: #f1f2f6;
 }
+header .star {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 6%;
+    top: 2%;
+ }
+ header .star img {
+     width: 100%;
+     height: 100%;
+ }
+ header .star img:hover {
+    filter: brightness(1.75);
+    cursor: pointer;
+ }
+ header .star img:active {
+    transform: translateY(3px);
+ }
+
+ .sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    text-align: left;
+    padding: 8px 16px;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    /* position:relative; */
+    animation: animateleft 0.5s;
+}
+    @keyframes animateleft
+    {from
+        {left:-300px; 
+        opacity:0}
+     to
+     {left:0; 
+        opacity:1}
+ }
+ .buttonX {
+    border:none;
+    padding: 8px 16px;
+    text-decoration:none;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    font-size: 21px;
+ }
+ .favouriteMovie {
+     margin-top: 30px;
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+ }
+ .sidebar h3 {
+     text-align: center;
+     font-size: 25px;
+     color: red;
+     height: 30px;
+ }
+ .favouriteMovie a {
+     display: block;
+     font-size: 20px;
+     letter-spacing: 4px;
+     text-decoration: none;
+     color: rgb(134, 132, 132);
+     height: 70px;
+     line-height: 70px;
+     text-align: center;
+ }
+ .favouriteMovie a:nth-child(even){
+     background-color: #fff;
+ }
+ .favouriteMovie a:nth-child(odd){
+     background-color: #57606f;
+     color: #fff;
+ }
 
 .headerSection,
 .movieSection {
-    background-color: #fff;
+    background-color: #f1f2f6;
+    padding: 3%;
 }
 
 .containerPicture {
@@ -83,7 +163,7 @@ header span {
 
  .quotesSection {
      height: 100vh;
-     background-color: #f1f2f6;
+     background-color: #fff;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -101,8 +181,9 @@ header span {
      flex-direction: column;
      justify-content: center;
      align-items: center;
- 
  }
+
+
  .quotes p {
      font-size: 30px;
      color: #fff;
@@ -121,9 +202,24 @@ header span {
     text-shadow: #53b4a2 1px 1px;
 
  }
+.fade-in {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+}
 .someText {
     width: 80%;
-    margin: 40px auto;
+    height: 200px;
+    margin: 20px auto;
+    text-align: center;
+    color: #57606f;
+}
+
+.someText h1 {
+    font-size: 50px;
+    letter-spacing: 4px;
+}
+.someText p {
+    margin-top: 15px;
     font-size: 25px;
 }
  .noResult {
@@ -153,7 +249,7 @@ input {
     text-indent: 20px;
 }
 
-button {
+.button {
     line-height: 50px;
 	height: 50px;
 	/* text-align: center; */
@@ -171,7 +267,7 @@ button {
     transition: transform 3s;
 }
 
-button:active {
+.button:active {
     transform: translateY(4px);
 }
 
@@ -244,24 +340,13 @@ button:active {
   }
 
   .fa-heart {
-    transition: transform 0.5s ease-out;
+    transition: transform .5s ease-out;
   }
 
   .fa-heart:hover {
      transform: scale(1.5);
+     color: rgba(255, 0, 0, 0.787);
   }
-  
-
-/* .container .movie .poster img:hover .iconHeart {
-    color: #fff;
-    font-size: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-*/
   
 .movieText {
     width: 100%;
