@@ -83,7 +83,7 @@ function openSidebar() {
     document.getElementById("sidebar").style.display = "block";
     document.getElementById("star").style.display = "none";
     if (x.matches) {
-        document.getElementById("sidebar").style.width = "100%";
+        document.getElementById("sidebar").style.width = "70%";
         document.getElementById("main").style.marginLeft = "100%";
     } else if (y.matches) {
         document.getElementById("sidebar").style.width = "40%";
@@ -130,10 +130,11 @@ function favouriteMovie() {
         `;
 
     });
-    let closeButton = document.getElementById('close');
-    console.log(closeButton.value);
-    closeButton.addEventListener('click', removeMovie);
-
+    let closeButton = document.querySelectorAll('.close');
+    console.log(closeButton);
+    closeButton.forEach(element => {
+        element.addEventListener('click', removeMovie);
+    });
 }
 
 function removeMovie() {
@@ -148,8 +149,6 @@ function removeMovie() {
     }
     console.log(value);
     console.log(favouriteArr);
-
-
 }
 
 

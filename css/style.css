@@ -504,15 +504,22 @@ input {
         margin: 0 auto; 
         background-color: var(--blueColor);
     }
+
     .displayNone {
         display: none;
     }
+
     .sidebar h3{
         text-align: left;
     }
+
     .someText {
         height: 40vh;
     }
+    #paragraph {
+        font-size: 20px;
+    }
+
 }
 
 /* animations */
@@ -527,6 +534,5 @@ input {
  @keyframes blinker {
     50% {
         opacity: 0.3;
-        /* color: darkred; */
     }
 }
