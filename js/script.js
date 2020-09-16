@@ -2,6 +2,7 @@ let button = document.getElementById('button');
 const iconHeart = document.getElementById('iconHeart');
 const favouriteMovieDiv = document.getElementById('favouriteMovieDiv');
 const header = document.getElementById('header');
+const noSearchResult = document.getElementById('noSearchResult');
 
 async function searchMovie() {
     let search = document.getElementById('search').value;
@@ -22,11 +23,13 @@ async function searchMovie() {
 
     if (typeof movieArray == "undefined" && movieArray == null) {
         container.innerHTML = null;
-        container.innerHTML += `
+        noSearchResult.innerHTML = null;
+        noSearchResult.innerHTML += `
                 <p class="noResult">There is no match with your search!</p>
             `
     } else {
         container.innerHTML = null;
+        noSearchResult.innerHTML = null;
         movieArray.forEach(data => {
             container.innerHTML += `
                 <div class="movie" id="movie">
@@ -48,6 +51,7 @@ async function searchMovie() {
                       /></a></span>
             </div>`
         })
+        document.getElementById('search').value = "";
     }
 
 
@@ -102,7 +106,12 @@ function closeSidebar() {
 
 //favourite movies
 
-let favouriteArr = [];
+var favouriteArr = [];
+let arrayLocalStorage = [];
+
+console.log(arrayLocalStorage);
+
+
 function favouriteMovie() {
     favouriteArr.indexOf(event.target.parentNode.parentNode.parentNode.childNodes[0].getAttribute('alt')) === -1 ?
         favouriteArr.push(event.target.parentNode.parentNode.parentNode.childNodes[0].getAttribute('alt')) : console.log('This movie already exist in array!');
@@ -112,30 +121,45 @@ function favouriteMovie() {
     setTimeout(function () {
         document.getElementById("paragraph").style.display = 'none';
         header.innerHTML = `<span>MovieLibrary</span>
-            <div class="star" id="star">
-                <img src="img/iconfinder_keditbookmarks_17999.png" alt="star" onclick="openSidebar()">
-            </div>`;
+                <div class="star" id="star">
+                    <img src="img/iconfinder_keditbookmarks_17999.png" alt="star" onclick="openSidebar()">
+                </div>`;
     }, 2000);
 
 
-    console.log(favouriteArr);
-    //appending movies from array to favourite movie sidebar
-    favouriteMovieDiv.innerHTML = "";
-    favouriteArr.forEach(elem => {
-        favouriteMovieDiv.innerHTML += `
-            <div class="movieDiv" id="movieDiv">
-            <a href="#">${elem}</a>
-            <button class="close" id="close">&times;</button>
-            </div>
-        `;
+    
+    // Set movie array to local storage
+    localStorage.setItem('favouriteMovies', JSON.stringify(favouriteArr));
 
+    // Get movie array from local storage
+    arrayLocalStorage = JSON.parse(localStorage.getItem("favouriteMovies"));
+
+    console.log(favouriteArr);
+
+    //appending movies from array to favourite movie sidebar
+
+    favouriteMovieDiv.innerHTML = "";
+    arrayLocalStorage.forEach(elem => {
+        favouriteMovieDiv.innerHTML += `
+                <div class="movieDiv" id="movieDiv">
+                <a href="#">${elem}</a>
+                <button class="close" id="close">&times;</button>
+                </div>
+            `;
     });
+
+
+    // Clear a selected movie from sidebar
     let closeButton = document.querySelectorAll('.close');
     console.log(closeButton);
     closeButton.forEach(element => {
         element.addEventListener('click', removeMovie);
     });
 }
+
+
+
+
 
 function removeMovie() {
     let item = this.parentNode;

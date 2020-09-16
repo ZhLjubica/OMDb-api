@@ -3,6 +3,7 @@
 :root {
    --blueColor: #40739e;
    --lightGray: #f1f2f6;
+   --darkGray: #57606f;
 }
 *{
     margin: 0;
@@ -216,7 +217,7 @@ header .star {
  .quotes {
      width: 60%;
      margin: 100px auto; 
-     background-color: #57606f;
+     background-color: var(--darkGray);
      padding: 20px 80px;   
      text-align: center;
      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);  
@@ -260,7 +261,7 @@ header .star {
     height: 50%;
     margin: 20px auto;
     text-align: center;
-    color: #57606f;
+    color: var(--darkGray);
 }
 
 .someText h1 {
@@ -316,8 +317,12 @@ input {
 }
 
 .noResult {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
-    color: #57606f;
+    color: var(--darkGray);
     line-height: 40px;
     text-shadow: #2a8d7b -1px -1px;
  }
@@ -519,7 +524,10 @@ input {
     #paragraph {
         font-size: 20px;
     }
-
+    .noSearchResult {
+        margin-top: 150px;
+        text-align: center;
+    }
 }
 
 /* animations */
